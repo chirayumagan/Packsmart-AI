@@ -60,3 +60,6 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
+
+# Helper scripts
+push_to_github.bat
