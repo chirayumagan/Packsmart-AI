@@ -1,0 +1,52 @@
+{
+  "appName": "ਪੈਕਸਮਾਰਟ AI", "appTagline": "ਭਾਰਤੀ ਕਿਸਾਨਾਂ ਲਈ ਸਮਾਰਟ ਪੈਕੇਜਿੰਗ", "sihBadge": "SIH 2024 — ID 26236",
+  "heroTitle": "ਸਹੀ ਪੈਕੇਜਿੰਗ ਲੱਭੋ", "heroTitleHighlight": "3 ਸਧਾਰਨ ਕਦਮਾਂ ਵਿੱਚ",
+  "heroSubtitle": "ਕੋਈ ਰਸਾਇਣ ਵਿਗਿਆਨ ਦੀ ਲੋੜ ਨਹੀਂ। ਆਪਣੇ ਉਤਪਾਦ ਬਾਰੇ ਦੱਸੋ ਅਤੇ ਅਸੀਂ FSSAI-ਮਨਜ਼ੂਰਸ਼ੁਦਾ ਪੈਕੇਜਿੰਗ ਦੀ ਸਿਫਾਰਸ਼ ਕਰਾਂਗੇ।",
+  "searchPlaceholder": "ਖਾਣ-ਪੀਣ ਦੀ ਵਸਤੂ ਟਾਈਪ ਕਰੋ... ਜਿਵੇਂ ਟਮਾਟਰ, ਅੰਬ, ਦੁੱਧ",
+  "searchLabel": "ਖਾਣ-ਪੀਣ ਦੀ ਵਸਤੂ ਲੱਭੋ", "searchSubtitle": "ਕਿਸੇ ਵੀ ਭਾਸ਼ਾ ਵਿੱਚ ਟਾਈਪ ਕਰੋ",
+  "searchButton": "ਲੱਭੋ", "orDivider": "ਜਾਂ ਹੇਠਾਂ ਵਿਜ਼ਾਰਡ ਵਰਤੋ",
+  "skipSearch": "ਛੱਡੋ — ਵਿਜ਼ਾਰਡ ਵਰਤੋ", "suggestionsTitle": "ਸੁਝਾਅ", "confidence": "ਮਿਲਾਨ",
+  "selectThis": "ਚੁਣੋ", "noMatchFound": "ਕੋਈ ਮਿਲਾਨ ਨਹੀਂ। ਵਿਜ਼ਾਰਡ ਵਰਤੋ।",
+  "step1Title": "ਤੁਸੀਂ ਕੀ ਪੈਕ ਕਰ ਰਹੇ ਹੋ?", "step1Subtitle": "ਭੋਜਨ ਦੀ ਕਿਸਮ ਚੁਣੋ",
+  "step2Title": "ਇਹ ਕਿਸ ਰੂਪ ਵਿੱਚ ਹੈ?", "step2Subtitle": "ਉਤਪਾਦ ਦੀ ਸਥਿਤੀ ਚੁਣੋ",
+  "step3Title": "ਇਹ ਕਿੰਨੀ ਦੂਰ ਜਾਵੇਗਾ?", "step3Subtitle": "ਆਵਾਜਾਈ ਮਾਰਗ ਚੁਣੋ",
+  "nextButton": "ਅੱਗੇ →", "backButton": "← ਪਿੱਛੇ", "getRecommendations": "ਸਿਫਾਰਸ਼ਾਂ ਲਓ →",
+  "analysing": "ਵਿਸ਼ਲੇਸ਼ਣ ਹੋ ਰਿਹਾ ਹੈ...", "analysisComplete": "ਵਿਸ਼ਲੇਸ਼ਣ ਪੂਰਾ",
+  "topRecommendations": "ਚੋਟੀ ਦੇ {{count}} ਪੈਕੇਜਿੰਗ ਵਿਕਲਪ",
+  "resultsFor": "ਲਈ", "resultsVia": "ਰਾਹੀਂ", "startNew": "ਨਵੀਂ ਸਿਫਾਰਸ਼ ਸ਼ੁਰੂ ਕਰੋ",
+  "costLabel": "ਪ੍ਰਤੀ ਯੂਨਿਟ ਲਾਗਤ", "shelfLifeLabel": "ਸ਼ੈਲਫ ਲਾਈਫ", "aiScoreLabel": "AI ਸਕੋਰ",
+  "fssaiBadge": "FSSAI ਮਨਜ਼ੂਰਸ਼ੁਦਾ",
+  "bestMatch": "🥇 ਸਭ ਤੋਂ ਵਧੀਆ", "runnerUp": "🥈 ਦੂਜਾ", "goodChoice": "🥉 ਚੰਗਾ ਵਿਕਲਪ",
+  "whyThis": "ਇਹ ਕਿਉਂ?", "hideDetails": "ਵੇਰਵੇ ਲੁਕਾਓ",
+  "aiRankingScore": "AI ਰੈਂਕਿੰਗ ਸਕੋਰ", "fssaiApproved": "FSSAI ਮਨਜ਼ੂਰਸ਼ੁਦਾ",
+  "costEfficiency": "ਲਾਗਤ ਕੁਸ਼ਲਤਾ", "expectedShelfLife": "ਅਨੁਮਾਨਿਤ ਸ਼ੈਲਫ ਲਾਈਫ",
+  "scoringExplained": "ਸਕੋਰ = 40% ਲਾਗਤ + 60% ਸ਼ੈਲਫ ਲਾਈਫ",
+  "days": "ਦਿਨ", "errorPrefix": "ਗਲਤੀ:", "selected": "✓ ਚੁਣਿਆ",
+  "cheapestOption": "ਸਭ ਤੋਂ ਸਸਤਾ", "mostCommon": "ਸਭ ਤੋਂ ਆਮ", "bestProtection": "ਸਭ ਤੋਂ ਵੱਧ ਸੁਰੱਖਿਆ",
+  "footerText": "ਪੈਕਸਮਾਰਟ AI · SIH Problem ID 26236 · ਭਾਰਤੀ ਕਿਸਾਨਾਂ ਲਈ",
+  "stepLabels": { "foodType": "ਭੋਜਨ ਕਿਸਮ", "formState": "ਰੂਪ", "transitRoute": "ਆਵਾਜਾਈ ਮਾਰਗ" },
+  "categories": {
+    "freshProduce": "ਤਾਜ਼ਾ ਉਤਪਾਦ", "freshProduceExamples": "ਸਬਜ਼ੀਆਂ, ਫਲ, ਜੜੀ-ਬੂਟੀਆਂ",
+    "dairy": "ਡੇਅਰੀ", "dairyExamples": "ਦੁੱਧ, ਪਨੀਰ, ਦਹੀਂ, ਘਿਓ",
+    "drySnacks": "ਸੁੱਕੇ ਸਨੈਕਸ", "drySnacksExamples": "ਨਮਕੀਨ, ਅਨਾਜ, ਮਸਾਲਾ ਪਾਊਡਰ",
+    "meat": "ਮਾਸ", "meatExamples": "ਮੁਰਗਾ, ਮੱਛੀ, ਬੱਕਰਾ"
+  },
+  "forms": {
+    "whole": "ਪੂਰਾ", "wholeDesc": "ਬਿਨਾਂ ਕੱਟੀਆਂ ਸਬਜ਼ੀਆਂ ਜਾਂ ਫਲ",
+    "cut": "ਕੱਟਿਆ", "cutDesc": "ਕੱਟਿਆ ਜਾਂ ਅੰਸ਼ਿਕ ਤੌਰ ਤੇ ਤਿਆਰ",
+    "solid": "ਠੋਸ / ਬਲਾਕ", "solidDesc": "ਪਨੀਰ, ਮੱਖਣ, ਪਨੀਰ ਬਲਾਕ",
+    "liquid": "ਤਰਲ", "liquidDesc": "ਦੁੱਧ, ਦਹੀਂ, ਲੱਸੀ, ਘਿਓ",
+    "wholeDry": "ਪੂਰਾ / ਢਿੱਲਾ", "wholeDryDesc": "ਨਮਕੀਨ, ਮੂੰਗਫਲੀ, ਬਿਸਕੁਟ",
+    "powder": "ਪਾਊਡਰ", "powderDesc": "ਮਸਾਲਾ ਪਾਊਡਰ, ਆਟਾ",
+    "wholeMeat": "ਪੂਰਾ", "wholeMeatDesc": "ਪੂਰੇ ਟੁਕੜੇ, ਮੁਰਗਾ ਜਾਂ ਮੱਛੀ",
+    "cutMeat": "ਕੱਟਿਆ", "cutMeatDesc": "ਫਿਲੇਟ, ਕੀਮਾ, ਕਬਾਬ"
+  },
+  "transit": {
+    "local": "ਸਥਾਨਕ ਆਟੋ", "localDistance": "< 50 ਕਿ.ਮੀ.", "localTime": "ਉਸੇ ਦਿਨ",
+    "localDesc": "ਪਿੰਡ ਦੀ ਮੰਡੀ ਅਤੇ ਨੇੜੇ ਦੇ ਸ਼ਹਿਰ ਡਿਲੀਵਰੀ।",
+    "interstate": "ਅੰਤਰ-ਰਾਜ ਟਰੱਕ", "interstateDistance": "50–1000 ਕਿ.ਮੀ.", "interstateTime": "2–4 ਦਿਨ",
+    "interstateDesc": "ਰਾਜ-ਪੱਧਰੀ ਵੰਡ, ਥੋਕ ਬਾਜ਼ਾਰ।",
+    "coldChain": "ਕੋਲਡ ਚੇਨ ਐਕਸਪ੍ਰੈੱਸ", "coldChainDistance": "ਕੋਈ ਵੀ ਦੂਰੀ", "coldChainTime": "ਫ੍ਰਿਜ਼",
+    "coldChainDesc": "ਤਾਪਮਾਨ-ਨਿਯੰਤਰਿਤ ਲੌਜਿਸਟਿਕਸ। ਵੱਧ ਤੋਂ ਵੱਧ ਸੁਰੱਖਿਆ।"
+  }
+}

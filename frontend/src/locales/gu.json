@@ -1,0 +1,52 @@
+{
+  "appName": "પૅકસ્માર્ટ AI", "appTagline": "ભારતીય ખેડૂતો માટે સ્માર્ટ પૅકેજિંગ", "sihBadge": "SIH 2024 — ID 26236",
+  "heroTitle": "યોગ્ય પૅકેજિંગ શોધો", "heroTitleHighlight": "3 સરળ પગલાઓમાં",
+  "heroSubtitle": "રસાયણ વિજ્ઞાનની જ્ઞાન જરૂરી નથી. તમારા ઉત્પાદન વિશે કહો અને અમે FSSAI-મંજૂર પૅકેજિંગ સૂચવીશું.",
+  "searchPlaceholder": "ખાદ્ય ઉત્પાદન ટાઇપ કરો... જેમ કે ટામેટું, કેરી, દૂધ",
+  "searchLabel": "ખાદ્ય ઉત્પાદન શોધો", "searchSubtitle": "કોઈ પણ ભાષામાં ટાઇપ કરો",
+  "searchButton": "શોધો", "orDivider": "અથવા નીચેના વિઝાર્ડનો ઉપયોગ કરો",
+  "skipSearch": "છોડો — વિઝાર્ડ વાપરો", "suggestionsTitle": "સૂચનો", "confidence": "મેળ",
+  "selectThis": "પસંદ કરો", "noMatchFound": "કોઈ મેળ ન મળ્યો. વિઝાર્ડ વાપરો.",
+  "step1Title": "તમે શું પૅક કરી રહ્યા છો?", "step1Subtitle": "ખોરાકનો પ્રકાર પસંદ કરો",
+  "step2Title": "તે કઈ સ્વરૂપમાં છે?", "step2Subtitle": "ઉત્પાદનની સ્થિતિ પસંદ કરો",
+  "step3Title": "તે કેટલું દૂર જશે?", "step3Subtitle": "પરિવહન માર્ગ પસંદ કરો",
+  "nextButton": "આગળ →", "backButton": "← પાછળ", "getRecommendations": "ભલામણો મેળવો →",
+  "analysing": "વિશ્લેષણ થઈ રહ્યું છે...", "analysisComplete": "વિશ્લેષણ પૂર્ણ",
+  "topRecommendations": "ટોચના {{count}} પૅકેજિંગ વિકલ્પો",
+  "resultsFor": "માટે", "resultsVia": "દ્વારા", "startNew": "નવી ભલામણ શરૂ કરો",
+  "costLabel": "દર એકમ ખર્ચ", "shelfLifeLabel": "શેલ્ફ લાઇફ", "aiScoreLabel": "AI સ્કોર",
+  "fssaiBadge": "FSSAI મંજૂર",
+  "bestMatch": "🥇 સર્વોત્તમ", "runnerUp": "🥈 બીજો", "goodChoice": "🥉 સારો વિકલ્પ",
+  "whyThis": "આ કેમ?", "hideDetails": "વિગતો છુપાવો",
+  "aiRankingScore": "AI રૅન્કિંગ સ્કોર", "fssaiApproved": "FSSAI મંજૂર",
+  "costEfficiency": "ખર્ચ કાર્યક્ષમતા", "expectedShelfLife": "અપેક્ષિત શેલ્ફ લાઇફ",
+  "scoringExplained": "સ્કોર = 40% ખર્ચ + 60% શેલ્ફ લાઇફ",
+  "days": "દિવસ", "errorPrefix": "ભૂલ:", "selected": "✓ પસંદ",
+  "cheapestOption": "સસ્તો વિકલ્પ", "mostCommon": "સૌથી સામાન્ય", "bestProtection": "સર્વોત્તમ સુરક્ષા",
+  "footerText": "પૅકસ્માર્ટ AI · SIH Problem ID 26236 · ભારતીય ખેડૂતો માટે",
+  "stepLabels": { "foodType": "ખોરાકનો પ્રકાર", "formState": "સ્વરૂપ", "transitRoute": "પરિવહન માર્ગ" },
+  "categories": {
+    "freshProduce": "તાજી ઉત્પાદન", "freshProduceExamples": "શાકભાજી, ફળ, ઔષધિ",
+    "dairy": "ડેરી", "dairyExamples": "દૂધ, પનીર, દહીં, ઘી",
+    "drySnacks": "સૂકા નાસ્તા", "drySnacksExamples": "નમકીન, ધાન્ય, મસાલા પાઉડર",
+    "meat": "માંસ", "meatExamples": "ચિકન, માછલી, મટન"
+  },
+  "forms": {
+    "whole": "સંપૂર્ણ", "wholeDesc": "ન કાપેલ શાકભાજી કે ફળ",
+    "cut": "કાપેલ", "cutDesc": "કાપેલ અથવા પ્રક્રિયા કરેલ",
+    "solid": "ઘન / બ્લોક", "solidDesc": "પનીર, માખણ, ચીઝ",
+    "liquid": "પ્રવાહી", "liquidDesc": "દૂધ, દહીં, છાશ, ઘી",
+    "wholeDry": "સંપૂર્ણ / ઢીલું", "wholeDryDesc": "નમકીન, મગફળી, બિસ્કિટ",
+    "powder": "પાઉડર", "powderDesc": "મસાલા પાઉડર, લોટ",
+    "wholeMeat": "સંપૂર્ણ", "wholeMeatDesc": "પૂર્ણ ટુકડા, ચિકન અથવા માછલી",
+    "cutMeat": "કાપેલ", "cutMeatDesc": "ફિલેટ, કીમા, કબાબ"
+  },
+  "transit": {
+    "local": "સ્થાનિક ઓટો", "localDistance": "< 50 કિ.મી.", "localTime": "તે જ દિવસે",
+    "localDesc": "ગામની મંડી અને નજીકના શહેરમાં ડિલિવરી.",
+    "interstate": "આંતરરાજ્ય ટ્રક", "interstateDistance": "50–1000 કિ.મી.", "interstateTime": "2–4 દિવસ",
+    "interstateDesc": "રાજ્ય-સ્તરનું વિતરણ, જથ્થાબંધ બજારો.",
+    "coldChain": "કોલ્ડ ચેઇન એક્સપ્રેસ", "coldChainDistance": "કોઈ પણ અંતર", "coldChainTime": "રેફ્રિજરેટ",
+    "coldChainDesc": "તાપમાન-નિયંત્રિત લૉજિસ્ટિક્સ. મહત્તમ સુરક્ષા."
+  }
+}

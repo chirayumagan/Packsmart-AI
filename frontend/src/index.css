@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Global base ──────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    background-color: #F8F7F2;
+    color: #0F172A;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+  ::selection {
+    background-color: rgba(217, 240, 74, 0.4);
+    color: #0F172A;
+  }
+}
+
+/* ── Reusable component classes ──────────────────────────────── */
+@layer components {
+
+  /* ── Buttons ── */
+  .btn-lime {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5
+           font-bold text-sm rounded-full whitespace-nowrap
+           transition-all duration-200 active:scale-[0.97];
+    background-color: #D9F04A;
+    color: #17452C;
+  }
+  .btn-lime:hover {
+    filter: brightness(1.05);
+    box-shadow: 0 0 28px 8px rgba(217,240,74,0.22);
+  }
+  .btn-lime:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    box-shadow: none;
+    filter: none;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5
+           bg-transparent font-semibold text-sm rounded-full border border-slate-200
+           transition-all duration-200 hover:bg-slate-50 hover:border-slate-300;
+    color: #0F172A;
+  }
+
+  .btn-forest {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5
+           text-white font-bold text-sm rounded-full
+           transition-all duration-200 active:scale-[0.97];
+    background-color: #1F5C3A;
+  }
+  .btn-forest:hover { background-color: #2D7A4E; }
+
+  /* ── Cards ── */
+  .surface-card {
+    @apply bg-white rounded-[14px] border border-slate-200
+           transition-all duration-200;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.05);
+  }
+  .surface-card-hover {
+    @apply bg-white rounded-[14px] border border-slate-200 transition-all duration-200;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.05);
+  }
+  .surface-card-hover:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+
+  /* ── Step wizard cards ── */
+  .step-option {
+    @apply bg-white rounded-[14px] border border-slate-200 p-5 cursor-pointer
+           relative overflow-hidden transition-all duration-200;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.05);
+    outline: 2px solid transparent;
+    outline-offset: 0px;
+  }
+  .step-option:hover:not(.selected) {
+    border-color: rgba(31, 92, 58, 0.4);
+  }
+  .step-option.selected {
+    border-color: #1F5C3A;
+    background-color: rgba(31, 92, 58, 0.04);
+    outline-color: rgba(31, 92, 58, 0.15);
+  }
+
+  /* ── Badges ── */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold;
+  }
+  .badge-lime  {
+    @apply badge;
+    background-color: #D9F04A;
+    color: #17452C;
+  }
+  .badge-green {
+    @apply badge border;
+    background-color: rgba(31,92,58,0.08);
+    color: #1F5C3A;
+    border-color: rgba(31,92,58,0.2);
+  }
+  .badge-blue  { @apply badge bg-blue-50 text-blue-700 border border-blue-200; }
+  .badge-slate { @apply badge bg-slate-100 text-slate-600; }
+
+  /* ── Section eyebrow ── */
+  .section-eyebrow {
+    @apply text-xs font-bold tracking-[0.18em] uppercase;
+    color: #64748B;
+  }
+
+  /* ── Metric chip ── */
+  .metric-chip {
+    @apply flex items-center gap-2 text-sm font-medium bg-slate-50 border border-slate-200 rounded-xl px-3 py-2;
+    color: #64748B;
+  }
+}
+
+/* ── Custom scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #E2E8F0; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #CBD5E1; }
+
+/* ── Accordion animation ──────────────────────────────────────── */
+.accordion-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 220ms ease;
+}
+.accordion-body.open {
+  grid-template-rows: 1fr;
+}
+.accordion-inner {
+  overflow: hidden;
+}

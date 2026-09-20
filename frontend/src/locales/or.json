@@ -1,0 +1,52 @@
+{
+  "appName": "ପ୍ୟାକ୍‌ସ୍ମାର୍ଟ AI", "appTagline": "ଭାରତୀୟ କୃଷକଙ୍କ ପାଇଁ ସ୍ମାର୍ଟ ପ୍ୟାକେଜିଂ", "sihBadge": "SIH 2024 — ID 26236",
+  "heroTitle": "ସଠିକ ପ୍ୟାକେଜିଂ ଖୋଜନ୍ତୁ", "heroTitleHighlight": "3 ସରଳ ପଦକ୍ଷେପରେ",
+  "heroSubtitle": "ରସାୟନ ବିଜ୍ଞାନ ଜ୍ଞାନ ଦରକାର ନାହିଁ। ଆପଣଙ୍କ ଉତ୍ପାଦ ବିଷୟରେ ଜଣାନ୍ତୁ ଏବଂ ଆମେ FSSAI-ଅନୁମୋଦିତ ପ୍ୟାକେଜିଂ ସୁପାରିଶ କରିବୁ।",
+  "searchPlaceholder": "ଖାଦ୍ୟ ଦ୍ରବ୍ୟ ଟାଇପ୍ କରନ୍ତୁ... ଯଥା ଟମାଟ, ଆମ୍ବ, କ୍ଷୀର",
+  "searchLabel": "ଖାଦ୍ୟ ଦ୍ରବ୍ୟ ଖୋଜନ୍ତୁ", "searchSubtitle": "ଯେ କୌଣସି ଭାଷାରେ ଟାଇପ୍ କରନ୍ତୁ",
+  "searchButton": "ଖୋଜ", "orDivider": "ବା ତଳ ୱିଜ଼ାର୍ଡ ବ୍ୟବହାର କରନ୍ତୁ",
+  "skipSearch": "ଛାଡ଼ନ୍ତୁ — ୱିଜ଼ାର୍ଡ ବ୍ୟବହାର କରନ୍ତୁ", "suggestionsTitle": "ପ୍ରସ୍ତାବ", "confidence": "ମିଳାଣ",
+  "selectThis": "ଚୟନ କରନ୍ତୁ", "noMatchFound": "କୌଣସି ମିଳାଣ ନାହିଁ। ୱିଜ଼ାର୍ଡ ବ୍ୟବହାର କରନ୍ତୁ।",
+  "step1Title": "ଆପଣ କ'ଣ ପ୍ୟାକ୍ କରୁଛନ୍ତି?", "step1Subtitle": "ଖାଦ୍ୟ ପ୍ରକାର ଚୟନ କରନ୍ତୁ",
+  "step2Title": "ଏହା କେଉଁ ଆକାରରେ ଅଛି?", "step2Subtitle": "ଉତ୍ପାଦ ସ୍ଥିତି ଚୟନ କରନ୍ତୁ",
+  "step3Title": "ଏହା କେତେ ଦୂର ଯିବ?", "step3Subtitle": "ପରିବହନ ମାର୍ଗ ଚୟନ କରନ୍ତୁ",
+  "nextButton": "ପରବର୍ତ୍ତୀ →", "backButton": "← ପଛକୁ", "getRecommendations": "ସୁପାରିଶ ପ୍ରାପ୍ତ କରନ୍ତୁ →",
+  "analysing": "ବିଶ୍ଳେଷଣ ହେଉଛି...", "analysisComplete": "ବିଶ୍ଳେଷଣ ସମ୍ପୂର୍ଣ୍ଣ",
+  "topRecommendations": "ଶ୍ରେଷ୍ଠ {{count}} ପ୍ୟାକେଜିଂ ବିକଳ୍ପ",
+  "resultsFor": "ପାଇଁ", "resultsVia": "ମାଧ୍ୟମରେ", "startNew": "ନୂଆ ସୁପାରିଶ ଆରମ୍ଭ କରନ୍ତୁ",
+  "costLabel": "ପ୍ରତି ୟୁନିଟ ଖର୍ଚ", "shelfLifeLabel": "ଶେଲ୍ଫ ଲାଇଫ", "aiScoreLabel": "AI ସ୍କୋର",
+  "fssaiBadge": "FSSAI ଅନୁମୋଦିତ",
+  "bestMatch": "🥇 ସର୍ବୋତ୍ତମ", "runnerUp": "🥈 ଦ୍ୱିତୀୟ", "goodChoice": "🥉 ଭଲ ବିକଳ୍ପ",
+  "whyThis": "ଏହା କାହିଁକି?", "hideDetails": "ବିବରଣୀ ଲୁଚାନ୍ତୁ",
+  "aiRankingScore": "AI ରାଙ୍କିଂ ସ୍କୋର", "fssaiApproved": "FSSAI ଅନୁମୋଦିତ",
+  "costEfficiency": "ଖର୍ଚ ଦକ୍ଷତା", "expectedShelfLife": "ପ୍ରତ୍ୟାଶିତ ଶେଲ୍ଫ ଲାଇଫ",
+  "scoringExplained": "ସ୍କୋର = 40% ଖର୍ଚ + 60% ଶେଲ୍ଫ ଲାଇଫ",
+  "days": "ଦିନ", "errorPrefix": "ଭୁଲ:", "selected": "✓ ଚୟନ",
+  "cheapestOption": "ସବୁଠୁ ଶସ୍ତା", "mostCommon": "ସବୁଠୁ ସାଧାରଣ", "bestProtection": "ସର୍ବୋତ୍ତମ ସୁରକ୍ଷା",
+  "footerText": "ପ୍ୟାକ୍‌ସ୍ମାର୍ଟ AI · SIH Problem ID 26236 · ଭାରତୀୟ କୃଷକଙ୍କ ପାଇଁ",
+  "stepLabels": { "foodType": "ଖାଦ୍ୟ ପ୍ରକାର", "formState": "ଆକାର", "transitRoute": "ପରିବହନ ମାର୍ଗ" },
+  "categories": {
+    "freshProduce": "ତାଜା ଉତ୍ପାଦ", "freshProduceExamples": "ପନିପରିବା, ଫଳ, ଔଷଧି",
+    "dairy": "ଡେୟରି", "dairyExamples": "କ୍ଷୀର, ଛେନା, ଦହି, ଘି",
+    "drySnacks": "ଶୁଖିଲା ସ୍ନ୍ୟାକ୍ସ", "drySnacksExamples": "ନମକୀନ, ଶସ୍ୟ, ମସଲା ଗୁଣ୍ଡ",
+    "meat": "ମାଂସ", "meatExamples": "ମୁର୍ଗୀ, ମାଛ, ମଟନ"
+  },
+  "forms": {
+    "whole": "ସଂପୂର୍ଣ୍ଣ", "wholeDesc": "ନ କଟା ପନିପରିବା ବା ଫଳ",
+    "cut": "କଟା", "cutDesc": "ଖଣ୍ଡ ଖଣ୍ଡ ବା ଆଂଶିକ ପ୍ରସ୍ତୁତ",
+    "solid": "ଘନ / ବ୍ଲକ", "solidDesc": "ଛେନା, ମାଖନ, ଚିଜ",
+    "liquid": "ତରଳ", "liquidDesc": "କ୍ଷୀର, ଦହି, ଲଶ୍ଶି, ଘି",
+    "wholeDry": "ସଂପୂର୍ଣ୍ଣ / ଢିଲା", "wholeDryDesc": "ନମକୀନ, ଚିନାବାଦାମ, ବିସ୍କୁଟ",
+    "powder": "ଗୁଣ୍ଡ", "powderDesc": "ମସଲା ଗୁଣ୍ଡ, ଆଟା",
+    "wholeMeat": "ସଂପୂର୍ଣ୍ଣ", "wholeMeatDesc": "ପୂର୍ଣ୍ଣ ଖଣ୍ଡ, ମୁର୍ଗୀ ବା ମାଛ",
+    "cutMeat": "କଟା", "cutMeatDesc": "ଫିଲେଟ, କୀମା, କବାବ"
+  },
+  "transit": {
+    "local": "ସ୍ଥାନୀୟ ଅଟୋ", "localDistance": "< 50 କି.ମି.", "localTime": "ସେହି ଦିନ",
+    "localDesc": "ଗ୍ରାମ ମଣ୍ଡି ଓ ନିକଟ ସହରରେ ଡେଲିଭରି।",
+    "interstate": "ଅନ୍ତଃରାଜ୍ୟ ଟ୍ରକ", "interstateDistance": "50–1000 କି.ମି.", "interstateTime": "2–4 ଦିନ",
+    "interstateDesc": "ରାଜ୍ୟ-ସ୍ତରୀୟ ବଣ୍ଟନ, ଥୋକ ବଜାର।",
+    "coldChain": "କୋଲ୍ଡ ଚେନ୍ ଏକ୍ସପ୍ରେସ", "coldChainDistance": "ଯେ କୌଣସି ଦୂରତ୍ୱ", "coldChainTime": "ଶୀତଳ",
+    "coldChainDesc": "ତାପମାତ୍ରା ନିୟନ୍ତ୍ରିତ ଲଜିଷ୍ଟିକ୍ସ। ସର୍ବୋଚ୍ଚ ସୁରକ୍ଷା।"
+  }
+}

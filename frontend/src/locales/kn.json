@@ -1,0 +1,52 @@
+{
+  "appName": "ಪ್ಯಾಕ್‌ಸ್ಮಾರ್ಟ್ AI", "appTagline": "ಭಾರತೀಯ ರೈತರಿಗೆ ಸ್ಮಾರ್ಟ್ ಪ್ಯಾಕೇಜಿಂಗ್", "sihBadge": "SIH 2024 — ID 26236",
+  "heroTitle": "ಸರಿಯಾದ ಪ್ಯಾಕೇಜಿಂಗ್ ಕಂಡುಕೊಳ್ಳಿ", "heroTitleHighlight": "3 ಸರಳ ಹಂತಗಳಲ್ಲಿ",
+  "heroSubtitle": "ರಸಾಯನ ಜ್ಞಾನ ಅಗತ್ಯವಿಲ್ಲ. ನಿಮ್ಮ ಉತ್ಪನ್ನದ ಬಗ್ಗೆ ಹೇಳಿ, ಉತ್ತಮ FSSAI-ಅನುಮೋದಿತ ಪ್ಯಾಕೇಜಿಂಗ್ ಸೂಚಿಸುತ್ತೇವೆ.",
+  "searchPlaceholder": "ಆಹಾರ ಪದಾರ್ಥ ಟೈಪ್ ಮಾಡಿ... ಉದಾ. ಟೊಮೆಟೊ, ಮಾವು, ಹಾಲು",
+  "searchLabel": "ಆಹಾರ ಪದಾರ್ಥ ಹುಡುಕಿ", "searchSubtitle": "ಯಾವುದೇ ಭಾಷೆಯಲ್ಲಿ ಟೈಪ್ ಮಾಡಿ",
+  "searchButton": "ಹುಡುಕಿ", "orDivider": "ಅಥವಾ ಕೆಳಗಿನ ವಿಜಾರ್ಡ್ ಬಳಸಿ",
+  "skipSearch": "ಬಿಟ್ಟು ಬಿಡಿ — ವಿಜಾರ್ಡ್ ಬಳಸಿ", "suggestionsTitle": "ಸಲಹೆಗಳು", "confidence": "ಹೊಂದಾಣಿಕೆ",
+  "selectThis": "ಆಯ್ಕೆ ಮಾಡಿ", "noMatchFound": "ಹೊಂದಾಣಿಕೆ ಸಿಗಲಿಲ್ಲ. ವಿಜಾರ್ಡ್ ಬಳಸಿ.",
+  "step1Title": "ನೀವು ಏನು ಪ್ಯಾಕ್ ಮಾಡುತ್ತಿದ್ದೀರಿ?", "step1Subtitle": "ಆಹಾರ ವಿಧ ಆಯ್ಕೆ ಮಾಡಿ",
+  "step2Title": "ಅದು ಯಾವ ರೂಪದಲ್ಲಿದೆ?", "step2Subtitle": "ಉತ್ಪನ್ನದ ಸ್ಥಿತಿ ಆಯ್ಕೆ ಮಾಡಿ",
+  "step3Title": "ಅದು ಎಷ್ಟು ದೂರ ಹೋಗುತ್ತದೆ?", "step3Subtitle": "ಸಾರಿಗೆ ಮಾರ್ಗ ಆಯ್ಕೆ ಮಾಡಿ",
+  "nextButton": "ಮುಂದೆ →", "backButton": "← ಹಿಂದೆ", "getRecommendations": "ಶಿಫಾರಸುಗಳನ್ನು ಪಡೆಯಿರಿ →",
+  "analysing": "ವಿಶ್ಲೇಷಣೆ ಆಗುತ್ತಿದೆ...", "analysisComplete": "ವಿಶ್ಲೇಷಣೆ ಪೂರ್ಣ",
+  "topRecommendations": "ಉನ್ನತ {{count}} ಪ್ಯಾಕೇಜಿಂಗ್ ಆಯ್ಕೆಗಳು",
+  "resultsFor": "ಗಾಗಿ", "resultsVia": "ಮೂಲಕ", "startNew": "ಹೊಸ ಶಿಫಾರಸು ಪ್ರಾರಂಭಿಸಿ",
+  "costLabel": "ಪ್ರತಿ ಘಟಕ ವೆಚ್ಚ", "shelfLifeLabel": "ಶೆಲ್ಫ್ ಜೀವಿತಾವಧಿ", "aiScoreLabel": "AI ಅಂಕ",
+  "fssaiBadge": "FSSAI ಅನುಮೋದಿತ",
+  "bestMatch": "🥇 ಅತ್ಯುತ್ತಮ", "runnerUp": "🥈 ಎರಡನೆಯದು", "goodChoice": "🥉 ಒಳ್ಳೆಯ ಆಯ್ಕೆ",
+  "whyThis": "ಇದು ಏಕೆ?", "hideDetails": "ವಿವರಗಳನ್ನು ಮರೆಮಾಡಿ",
+  "aiRankingScore": "AI ರ್ಯಾಂಕಿಂಗ್ ಅಂಕ", "fssaiApproved": "FSSAI ಅನುಮೋದಿತ",
+  "costEfficiency": "ವೆಚ್ಚ ದಕ್ಷತೆ", "expectedShelfLife": "ನಿರೀಕ್ಷಿತ ಶೆಲ್ಫ್ ಜೀವಿತಾವಧಿ",
+  "scoringExplained": "ಅಂಕ = 40% ವೆಚ್ಚ + 60% ಶೆಲ್ಫ್ ಜೀವಿತಾವಧಿ",
+  "days": "ದಿನಗಳು", "errorPrefix": "ದೋಷ:", "selected": "✓ ಆಯ್ಕೆ",
+  "cheapestOption": "ಅಗ್ಗದ ಆಯ್ಕೆ", "mostCommon": "ಸಾಮಾನ್ಯ", "bestProtection": "ಉತ್ತಮ ರಕ್ಷಣೆ",
+  "footerText": "ಪ್ಯಾಕ್‌ಸ್ಮಾರ್ಟ್ AI · SIH Problem ID 26236 · ಭಾರತೀಯ ರೈತರಿಗಾಗಿ",
+  "stepLabels": { "foodType": "ಆಹಾರ ವಿಧ", "formState": "ರೂಪ", "transitRoute": "ಸಾರಿಗೆ ಮಾರ್ಗ" },
+  "categories": {
+    "freshProduce": "ತಾಜಾ ಉತ್ಪನ್ನ", "freshProduceExamples": "ತರಕಾರಿ, ಹಣ್ಣು, ಗಿಡಮೂಲಿಕೆ",
+    "dairy": "ಡೇರಿ", "dairyExamples": "ಹಾಲು, ಪನೀರ್, ಮೊಸರು, ತುಪ್ಪ",
+    "drySnacks": "ಒಣ ತಿಂಡಿ", "drySnacksExamples": "ನಮಕೀನ್, ಧಾನ್ಯ, ಮಸಾಲಾ ಪುಡಿ",
+    "meat": "ಮಾಂಸ", "meatExamples": "ಕೋಳಿ, ಮೀನು, ಮಟನ್"
+  },
+  "forms": {
+    "whole": "ಸಂಪೂರ್ಣ", "wholeDesc": "ಕತ್ತರಿಸದ ತರಕಾರಿ ಅಥವಾ ಹಣ್ಣು",
+    "cut": "ಕತ್ತರಿಸಿದ", "cutDesc": "ಕತ್ತರಿಸಿದ ಅಥವಾ ಸಂಸ್ಕರಿಸಿದ",
+    "solid": "ಘನ / ಬ್ಲಾಕ್", "solidDesc": "ಪನೀರ್, ಬೆಣ್ಣೆ, ಚೀಸ್",
+    "liquid": "ದ್ರವ", "liquidDesc": "ಹಾಲು, ಮೊಸರು, ಮಜ್ಜಿಗೆ, ತುಪ್ಪ",
+    "wholeDry": "ಸಂಪೂರ್ಣ / ಸಡಿಲ", "wholeDryDesc": "ನಮಕೀನ್, ಕಡಲೆಕಾಯಿ, ಬಿಸ್ಕತ್",
+    "powder": "ಪುಡಿ", "powderDesc": "ಮಸಾಲಾ ಪುಡಿ, ಹಿಟ್ಟು",
+    "wholeMeat": "ಸಂಪೂರ್ಣ", "wholeMeatDesc": "ಪೂರ್ಣ ತುಂಡು, ಕೋಳಿ ಅಥವಾ ಮೀನು",
+    "cutMeat": "ಕತ್ತರಿಸಿದ", "cutMeatDesc": "ಫಿಲೆಟ್, ಕೀಮಾ, ಕಬಾಬ್"
+  },
+  "transit": {
+    "local": "ಸ್ಥಳೀಯ ಆಟೋ", "localDistance": "< 50 ಕಿ.ಮೀ", "localTime": "ಅದೇ ದಿನ",
+    "localDesc": "ಗ್ರಾಮದ ಮಂಡಿ ಮತ್ತು ಹತ್ತಿರದ ಪಟ್ಟಣಕ್ಕೆ ಡೆಲಿವರಿ.",
+    "interstate": "ಅಂತರರಾಜ್ಯ ಟ್ರಕ್", "interstateDistance": "50–1000 ಕಿ.ಮೀ", "interstateTime": "2–4 ದಿನ",
+    "interstateDesc": "ರಾಜ್ಯ ಮಟ್ಟದ ವಿತರಣೆ, ಸಗಟು ಮಾರುಕಟ್ಟೆ.",
+    "coldChain": "ಕೋಲ್ಡ್ ಚೈನ್ ಎಕ್ಸ್‌ಪ್ರೆಸ್", "coldChainDistance": "ಯಾವುದೇ ದೂರ", "coldChainTime": "ಶೀತಲೀಕರಣ",
+    "coldChainDesc": "ತಾಪಮಾನ ನಿಯಂತ್ರಿತ ಲಾಜಿಸ್ಟಿಕ್ಸ್. ಗರಿಷ್ಠ ರಕ್ಷಣೆ."
+  }
+}
