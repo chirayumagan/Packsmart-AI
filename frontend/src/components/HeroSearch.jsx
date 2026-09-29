@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Search, Loader2, ArrowRight, X, Leaf, ShieldCheck, Clock } from 'lucide-react';
+import { searchFoodClient } from '../utils/foodSearchClient';
 
 // Quick-select chips — popular Indian commodities
 const QUICK_CHIPS = [
@@ -26,7 +27,7 @@ export default function HeroSearch({ onSelectFood, onLaunchWizard }) {
   useEffect(() => {
     clearTimeout(timer.current);
     if (query.trim().length < 2) { setResults([]); setShowDrop(false); return; }
-    timer.current = setTimeout(doSearch, 400);
+    timer.current = setTimeout(doSearch, 200);
     return () => clearTimeout(timer.current);
   }, [query]);
 
@@ -38,15 +39,25 @@ export default function HeroSearch({ onSelectFood, onLaunchWizard }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: query.trim() }),
       });
-      const data = await res.json();
-      setResults(data.matches || []);
-      setShowDrop(true);
-      setActiveIdx(-1);
+      if (res.ok) {
+        const data = await res.json();
+        if (data.matches && data.matches.length > 0) {
+          setResults(data.matches);
+          setShowDrop(true);
+          setActiveIdx(-1);
+          setLoading(false);
+          return;
+        }
+      }
     } catch {
-      setResults([]);
-    } finally {
-      setLoading(false);
+      // API call failed, fallback below
     }
+    // Client-side fallback matching
+    const fallbackMatches = searchFoodClient(query.trim());
+    setResults(fallbackMatches);
+    setShowDrop(true);
+    setActiveIdx(-1);
+    setLoading(false);
   }
 
   // Close dropdown on outside click

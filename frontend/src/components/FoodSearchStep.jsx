@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Search, Loader2, ChevronRight, X } from 'lucide-react';
+import { searchFoodClient } from '../utils/foodSearchClient';
 
 export default function FoodSearchStep({ onSelectFood, onSkip }) {
   const { t } = useTranslation();
@@ -19,7 +20,7 @@ export default function FoodSearchStep({ onSelectFood, onSkip }) {
         setHasSearched(false);
         setError('');
       }
-    }, 500); // debounce
+    }, 200); // debounce
 
     return () => clearTimeout(timer);
   }, [query]);
@@ -36,19 +37,24 @@ export default function FoodSearchStep({ onSelectFood, onSkip }) {
         body: JSON.stringify({ query: query.trim() }),
       });
 
-      if (!response.ok) {
-        throw new Error('Search failed');
+      if (response.ok) {
+        const data = await response.json();
+        if (data.matches && data.matches.length > 0) {
+          setResults(data.matches);
+          setHasSearched(true);
+          setIsSearching(false);
+          return;
+        }
       }
-
-      const data = await response.json();
-      setResults(data.matches || []);
-      setHasSearched(true);
     } catch (err) {
-      setError(err.message || 'An error occurred during search.');
-      setResults([]);
-    } finally {
-      setIsSearching(false);
+      // Fallback below
     }
+
+    // Client-side fallback search
+    const fallbackMatches = searchFoodClient(query.trim());
+    setResults(fallbackMatches);
+    setHasSearched(true);
+    setIsSearching(false);
   };
 
   const handleClear = () => {

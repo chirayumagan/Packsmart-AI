@@ -9,6 +9,8 @@ import FoodFormStep from '../FoodFormStep';
 import TransitRouteStep from '../TransitRouteStep';
 import ResultCards, { SupplierModal } from '../ResultCards';
 
+import { generateClientRecommendations } from '../../utils/foodSearchClient';
+
 const API_BASE = '/api';
 
 export default function FarmerStudio() {
@@ -59,18 +61,28 @@ export default function FarmerStudio() {
           transit_route: farmerSelections.transitRoute,
         }),
       });
-      if (!res.ok) {
-        const errData = await res.json().catch(() => ({}));
-        throw new Error(errData.detail || `API ${res.status}`);
+      if (res.ok) {
+        const data = await res.json();
+        if (data.recommendations && data.recommendations.length > 0) {
+          setFarmerResults(data);
+          setView('results');
+          setLoading(false);
+          return;
+        }
       }
-      const data = await res.json();
-      setFarmerResults(data);
-      setView('results');
     } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
+      // Fallback below
     }
+
+    // Client-side recommendation fallback
+    const fallbackResults = generateClientRecommendations(
+      farmerSelections.category,
+      farmerSelections.form,
+      farmerSelections.transitRoute
+    );
+    setFarmerResults(fallbackResults);
+    setView('results');
+    setLoading(false);
   }
 
   const canNext =
