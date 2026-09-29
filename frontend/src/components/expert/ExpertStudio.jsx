@@ -7,6 +7,7 @@ import {
 import { usePersona } from '../../context/PersonaContext';
 import { useTranslation } from 'react-i18next';
 import { SupplierModal } from '../ResultCards';
+import { searchFoodClient } from '../../utils/foodSearchClient';
 
 // ─── Mock expert recommendations (multi-layer laminate data) ─────────────────
 const EXPERT_MOCK_RESULTS = [
@@ -138,15 +139,24 @@ function CommodityPresetSearch({ currentPreset, onSelect }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: query.trim() }),
       });
-      const data = await res.json();
-      setResults(data.matches || []);
-      setShowDrop(true);
-      setActiveIdx(-1);
+      if (res.ok) {
+        const data = await res.json();
+        if (data.matches && data.matches.length > 0) {
+          setResults(data.matches);
+          setShowDrop(true);
+          setActiveIdx(-1);
+          setLoading(false);
+          return;
+        }
+      }
     } catch {
-      setResults([]);
-    } finally {
-      setLoading(false);
+      // Fallback below
     }
+    const fallbackMatches = searchFoodClient(query.trim());
+    setResults(fallbackMatches);
+    setShowDrop(true);
+    setActiveIdx(-1);
+    setLoading(false);
   }
 
   // Close dropdown on outside click
