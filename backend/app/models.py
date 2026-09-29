@@ -106,7 +106,18 @@ class PackagingMaterial(Base):
 
 class Commodity(Base):
     """
-    Specific Indian food commodities mapped to categories and forms.
+    Specific Indian food commodities with full scientific packaging parameters.
+
+    Scientific columns (all nullable for backward compatibility):
+      water_activity         — aw 0.00–1.00; primary microbial risk predictor
+      resp_rate_ml_kg_hr     — ml CO₂/kg/hr @ 10°C; drives OTR window calculation
+      target_otr_min/max     — cm³/m²/day @ 23°C, 0% RH; acceptable OTR window
+      target_wvtr_max        — g/m²/day @ 38°C, 90% RH; moisture-barrier spec
+      shelf_life_ambient_days — days at ~30°C/75% RH Indian ambient conditions
+      co2_sensitivity        — low|medium|high|very_high; caps MAP CO₂ ratio
+      ethylene_sensitivity   — low|medium|high|very_high; governs cold-chain segregation
+      fssai_ref              — FSSAI FSS Act/Regulation reference
+      profile_category/form  — FK-equivalent to food_profiles for ML lookups
     """
     __tablename__ = "commodities"
 
@@ -115,6 +126,21 @@ class Commodity(Base):
     description = Column(String(256), nullable=True)
     category    = Column(String(64), nullable=False)
     form        = Column(String(64), nullable=False)
+
+    # --- Scientific packaging parameters (Migration 005) ---
+    water_activity          = Column(Numeric(4, 3), nullable=True)
+    resp_rate_ml_kg_hr      = Column(Numeric(8, 2), nullable=True)
+    target_otr_min          = Column(Numeric(10, 2), nullable=True)
+    target_otr_max          = Column(Numeric(10, 2), nullable=True)
+    target_wvtr_max         = Column(Numeric(8, 2), nullable=True)
+    shelf_life_ambient_days = Column(Integer, nullable=True)
+    co2_sensitivity         = Column(String(16), nullable=True)
+    ethylene_sensitivity    = Column(String(16), nullable=True)
+    fssai_ref               = Column(String(64), nullable=True)
+
+    # FK-equivalent link to food_profiles
+    profile_category        = Column(String(64), nullable=True, index=True)
+    profile_form            = Column(String(64), nullable=True, index=True)
 
 
 class Supplier(Base):
