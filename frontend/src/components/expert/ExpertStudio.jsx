@@ -196,7 +196,7 @@ function CommodityPresetSearch({ currentPreset, onSelect }) {
   };
 
   return (
-    <div className="relative mb-6" ref={dropRef}>
+    <div className="relative mb-5 sm:mb-6" ref={dropRef}>
       <label className="block text-xs font-bold text-[#64748B] uppercase tracking-wide mb-1.5">
         {t('expert.commoditySearch', 'Commodity Baseline Search')}
       </label>
@@ -209,7 +209,7 @@ function CommodityPresetSearch({ currentPreset, onSelect }) {
           onFocus={() => { if (query.length >= 2) setShowDrop(true); }}
           onKeyDown={handleKeyDown}
           placeholder={t('expert.searchPlaceholder', 'e.g., Alphonso Mango, Paneer...')}
-          className="w-full border-2 border-[#1F5C3A] rounded-2xl px-5 py-3.5 text-sm outline-none focus:ring-4 focus:ring-[#1F5C3A]/10 transition-all shadow-sm" 
+          className="w-full border-2 border-[#1F5C3A] rounded-2xl px-4 sm:px-5 py-3 sm:py-3.5 min-h-[44px] text-sm sm:text-base outline-none focus:ring-4 focus:ring-[#1F5C3A]/10 transition-all shadow-sm" 
         />
         
         {loading && (
@@ -223,20 +223,20 @@ function CommodityPresetSearch({ currentPreset, onSelect }) {
             {results.map((r, i) => (
               <button 
                 key={i} 
-                className={`w-full flex items-center justify-between px-5 py-3.5 text-left transition-colors duration-150 group ${
+                className={`w-full flex items-center justify-between px-4 sm:px-5 py-3.5 min-h-[44px] text-left transition-colors duration-150 group ${
                   i === activeIdx ? 'bg-[#1F5C3A]/8' : 'hover:bg-slate-50'
                 } ${i < results.length - 1 ? 'border-b border-slate-100' : ''}`}
                 onMouseDown={() => handleSelect(r)}
               >
-                <div className="flex items-center gap-3 min-w-0">
-                  <span className="inline-flex items-center gap-2 text-xs font-bold bg-green-100 text-green-800 rounded-lg px-2.5 py-1 uppercase tracking-wide flex-shrink-0">
+                <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                  <span className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-bold bg-green-100 text-green-800 rounded-lg px-2 sm:px-2.5 py-1 uppercase tracking-wide flex-shrink-0">
                     {r.category}
                   </span>
                   <div className="min-w-0">
-                    <div className="text-sm font-semibold text-[#0F172A] truncate">{r.food_name}</div>
+                    <div className="text-xs sm:text-sm font-semibold text-[#0F172A] truncate">{r.food_name}</div>
                     <div className="flex items-center gap-2 mt-0.5">
-                      <span className="text-xs text-[#64748B]">{r.form}</span>
-                      <span className={`text-xs font-bold text-[#1F5C3A]`}>{Math.round(r.confidence * 100)}% match</span>
+                      <span className="text-[10px] sm:text-xs text-[#64748B]">{r.form}</span>
+                      <span className={`text-[10px] sm:text-xs font-bold text-[#1F5C3A]`}>{Math.round(r.confidence * 100)}% match</span>
                     </div>
                   </div>
                 </div>
@@ -247,7 +247,7 @@ function CommodityPresetSearch({ currentPreset, onSelect }) {
 
         {/* No results */}
         {showDrop && !loading && results.length === 0 && query.length > 1 && (
-          <div className="absolute w-full bg-white border-2 border-t-0 border-[#1F5C3A] rounded-b-2xl shadow-xl z-50 px-5 py-4 text-sm text-[#64748B] text-center">
+          <div className="absolute w-full bg-white border-2 border-t-0 border-[#1F5C3A] rounded-b-2xl shadow-xl z-50 px-4 sm:px-5 py-4 text-xs sm:text-sm text-[#64748B] text-center">
             {t('noMatchFound', 'No match found. Please use the visual wizard.')}
           </div>
         )}
@@ -311,16 +311,16 @@ function ExpertCard({ rec, idx, onSupplierClick }) {
       idx === 0 ? 'border-[#1F5C3A]/40 ring-1 ring-[#1F5C3A]/20' : 'border-slate-200'
     }`}>
       {/* Card Header */}
-      <div className="p-5 pb-3">
+      <div className="p-4 sm:p-5 pb-3">
         <div className="flex items-start justify-between gap-3 mb-3">
           <div className="flex-1">
             <span className={`inline-block text-[10px] font-bold rounded-full px-2.5 py-1 mb-2 ${
               idx === 0 ? 'bg-[#D9F04A] text-[#17452C]' : 'bg-slate-100 text-slate-600'
             }`}>{rankLabels[idx] || rankLabels[2]}</span>
-            <h3 className="font-extrabold text-[#0F172A] text-sm leading-tight">{rec.name}</h3>
+            <h3 className="font-extrabold text-[#0F172A] text-sm sm:text-base leading-tight">{rec.name}</h3>
           </div>
           <div className="text-right flex-shrink-0">
-            <div className="text-xl font-black text-[#0F172A]">{scorePercent}<span className="text-xs font-normal text-[#64748B]">/100</span></div>
+            <div className="text-lg sm:text-xl font-black text-[#0F172A]">{scorePercent}<span className="text-xs font-normal text-[#64748B]">/100</span></div>
             <div className="text-[9px] text-[#64748B] uppercase tracking-wider">AI Score</div>
           </div>
         </div>
@@ -333,17 +333,17 @@ function ExpertCard({ rec, idx, onSupplierClick }) {
         {/* Quick metrics row */}
         <div className="flex gap-2 flex-wrap mb-3">
           <span className="flex items-center gap-1 bg-slate-50 border border-slate-100 rounded-lg px-2 py-1 text-xs font-semibold text-[#0F172A]">
-            <Clock className="w-3 h-3 text-[#1F5C3A]" /> {rec.shelf_life_days}d shelf life
+            <Clock className="w-3 h-3 text-[#1F5C3A] flex-shrink-0" /> {rec.shelf_life_days}d shelf life
           </span>
           <span className="flex items-center gap-1 bg-slate-50 border border-slate-100 rounded-lg px-2 py-1 text-xs font-semibold text-[#0F172A]">
-            <IndianRupee className="w-3 h-3 text-[#1F5C3A]" /> ₹{rec.cost_per_unit_inr}/unit
+            <IndianRupee className="w-3 h-3 text-[#1F5C3A] flex-shrink-0" /> ₹{rec.cost_per_unit_inr}/unit
           </span>
           <span className="flex items-center gap-1 bg-slate-50 border border-slate-100 rounded-lg px-2 py-1 text-xs font-semibold text-[#0F172A]">
-            <Layers className="w-3 h-3 text-[#1F5C3A]" /> {rec.gauge}
+            <Layers className="w-3 h-3 text-[#1F5C3A] flex-shrink-0" /> {rec.gauge}
           </span>
           {rec.is_fssai_approved && (
             <span className="flex items-center gap-1 bg-blue-50 border border-blue-100 rounded-lg px-2 py-1 text-[10px] font-bold text-blue-700">
-              <ShieldCheck className="w-3 h-3" /> {t('expert.fssai', 'FSSAI')}
+              <ShieldCheck className="w-3 h-3 flex-shrink-0" /> {t('expert.fssai', 'FSSAI')}
             </span>
           )}
         </div>
@@ -359,14 +359,14 @@ function ExpertCard({ rec, idx, onSupplierClick }) {
       <div className="border-t border-slate-100">
         <button
           onClick={() => setOpen(v => !v)}
-          className="w-full flex items-center justify-between px-5 py-3 text-xs font-bold text-[#64748B] hover:text-[#1F5C3A] transition-colors"
+          className="w-full min-h-[44px] flex items-center justify-between px-4 sm:px-5 py-3 text-xs font-bold text-[#64748B] hover:text-[#1F5C3A] transition-colors"
         >
-          <span className="flex items-center gap-1.5"><Layers className="w-3.5 h-3.5" /> Layer Structure & Barrier Metrics</span>
-          {open ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+          <span className="flex items-center gap-1.5"><Layers className="w-3.5 h-3.5 flex-shrink-0" /> Layer Structure & Barrier Metrics</span>
+          {open ? <ChevronUp className="w-4 h-4 flex-shrink-0" /> : <ChevronDown className="w-4 h-4 flex-shrink-0" />}
         </button>
 
         {open && (
-          <div className="px-5 pb-5">
+          <div className="px-4 sm:px-5 pb-5">
             {/* Multi-layer structure visual */}
             <div className="bg-slate-50 rounded-xl p-3 border border-slate-100 mb-4">
               <div className="text-[9px] font-bold uppercase tracking-widest text-[#64748B] mb-2">Polymer Stack (outer → inner)</div>
@@ -394,13 +394,13 @@ function ExpertCard({ rec, idx, onSupplierClick }) {
       {/* AI Rationale (collapsible) */}
       <div className="border-t border-slate-100">
         <button onClick={() => setShowRationale(v => !v)}
-          className="w-full flex items-center justify-between px-5 py-3 text-xs font-bold text-[#64748B] hover:text-[#1F5C3A] transition-colors">
-          <span className="flex items-center gap-1.5"><Info className="w-3.5 h-3.5" /> AI Scientific Rationale</span>
-          {showRationale ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+          className="w-full min-h-[44px] flex items-center justify-between px-4 sm:px-5 py-3 text-xs font-bold text-[#64748B] hover:text-[#1F5C3A] transition-colors">
+          <span className="flex items-center gap-1.5"><Info className="w-3.5 h-3.5 flex-shrink-0" /> AI Scientific Rationale</span>
+          {showRationale ? <ChevronUp className="w-4 h-4 flex-shrink-0" /> : <ChevronDown className="w-4 h-4 flex-shrink-0" />}
         </button>
         {showRationale && (
-          <div className="px-5 pb-5">
-            <div className="bg-[#1F5C3A]/5 border border-[#1F5C3A]/15 rounded-xl p-4 text-xs text-[#0F172A] leading-relaxed font-mono">
+          <div className="px-4 sm:px-5 pb-5">
+            <div className="bg-[#1F5C3A]/5 border border-[#1F5C3A]/15 rounded-xl p-3.5 sm:p-4 text-xs text-[#0F172A] leading-relaxed font-mono">
               {t(`expert.rationale_${rec.id}`, rec.rationale)}
             </div>
           </div>
@@ -411,9 +411,9 @@ function ExpertCard({ rec, idx, onSupplierClick }) {
       <div className="border-t border-slate-100 p-4">
         <button 
           onClick={() => onSupplierClick && onSupplierClick(rec.id)}
-          className="w-full group inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-slate-100 border border-slate-200 text-sm font-semibold text-slate-800 hover:bg-[#D9F04A] hover:border-[#cbe33e] hover:text-slate-950 transition-colors duration-200"
+          className="w-full group inline-flex items-center justify-center gap-2 py-3 px-4 min-h-[44px] rounded-xl bg-slate-100 border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 hover:bg-[#D9F04A] hover:border-[#cbe33e] hover:text-slate-950 transition-colors duration-200 shadow-sm"
         >
-          <ShoppingCart className="w-4 h-4 group-hover:scale-110 transition-transform" />
+          <ShoppingCart className="w-4 h-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
           {t('marketplace.findSuppliers')}
         </button>
       </div>
@@ -429,10 +429,12 @@ function SliderInput({ label, value, min, max, step = 0.01, unit, onChange }) {
         <label className="text-xs font-bold text-[#64748B] uppercase tracking-wide">{label}</label>
         <span className="text-xs font-bold text-[#0F172A] bg-slate-100 rounded-md px-2 py-0.5">{value}{unit}</span>
       </div>
-      <input type="range" min={min} max={max} step={step} value={value}
-        onChange={e => onChange(parseFloat(e.target.value))}
-        className="w-full h-1.5 bg-slate-200 rounded-full appearance-none cursor-pointer accent-[#1F5C3A]" />
-      <div className="flex justify-between text-[10px] text-[#64748B] mt-0.5">
+      <div className="min-h-[44px] flex items-center">
+        <input type="range" min={min} max={max} step={step} value={value}
+          onChange={e => onChange(parseFloat(e.target.value))}
+          className="w-full h-2 bg-slate-200 rounded-full appearance-none cursor-pointer accent-[#1F5C3A] touch-action-none" />
+      </div>
+      <div className="flex justify-between text-[10px] text-[#64748B] -mt-1">
         <span>{min}{unit}</span><span>{max}{unit}</span>
       </div>
     </div>
@@ -520,22 +522,23 @@ export default function ExpertStudio() {
             <div className="bg-white rounded-2xl border border-slate-200 shadow-sm sticky top-24">
 
               {/* Tab navigation */}
-              <div className="border-b border-slate-100 px-4 pt-4">
-                <div className="flex gap-1">
+              <div className="border-b border-slate-100 px-3 sm:px-4 pt-3 sm:pt-4 overflow-x-auto">
+                <div className="flex gap-1 min-w-[300px]">
                   {tabs.map(tab => (
                     <button key={tab.id} onClick={() => setActiveTab(tab.id)}
-                      className={`flex items-center gap-1.5 px-3 py-2 text-[11px] font-bold rounded-t-lg transition-all ${
+                      className={`flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-2.5 text-[11px] sm:text-xs font-bold rounded-t-lg transition-all min-h-[44px] flex-1 ${
                         activeTab === tab.id
-                          ? 'bg-[#1F5C3A] text-white'
+                          ? 'bg-[#1F5C3A] text-white shadow-sm'
                           : 'text-[#64748B] hover:text-[#0F172A] hover:bg-slate-50'
                       }`}>
-                      {tab.icon} {tab.label}
+                      <span className="flex-shrink-0">{tab.icon}</span>
+                      <span className="truncate">{tab.label}</span>
                     </button>
                   ))}
                 </div>
               </div>
 
-              <div className="p-5 space-y-5">
+              <div className="p-4 sm:p-5 space-y-4 sm:space-y-5">
 
                 {/* Tab A: Food Chemistry */}
                 {activeTab === 'chemistry' && (
@@ -570,7 +573,7 @@ export default function ExpertStudio() {
                       <div className="space-y-3">
                         <SliderInput label="O₂ %" value={expertInputs.o2Percent} min={0} max={21} step={0.5} unit="%" onChange={v => updateInput('o2Percent', v)} />
                         <SliderInput label="CO₂ %" value={expertInputs.co2Percent} min={0} max={60} step={0.5} unit="%" onChange={v => updateInput('co2Percent', v)} />
-                        <div className="bg-slate-50 rounded-lg px-3 py-2 text-xs text-[#64748B] flex justify-between">
+                        <div className="bg-slate-50 rounded-lg px-3 py-2 text-xs text-[#64748B] flex justify-between items-center min-h-[44px]">
                           <span>{t('expert.n2Balance', 'N₂ Balance')}</span>
                           <span className="font-bold text-[#0F172A]">{Math.max(0, 100 - expertInputs.o2Percent - expertInputs.co2Percent).toFixed(1)}%</span>
                         </div>
@@ -584,7 +587,7 @@ export default function ExpertStudio() {
                       </div>
                       <input type="number" value={expertInputs.respirationRate} min={0} max={500}
                         onChange={e => updateInput('respirationRate', +e.target.value)}
-                        className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-[#1F5C3A] bg-white" />
+                        className="w-full border border-slate-200 rounded-xl px-3.5 py-2.5 min-h-[44px] text-sm sm:text-base outline-none focus:border-[#1F5C3A] bg-white transition-all" />
                     </div>
                   </>
                 )}
@@ -600,7 +603,7 @@ export default function ExpertStudio() {
                             <label className="block text-[10px] font-bold text-[#64748B] mb-1">{label}</label>
                             <input type="number" value={expertInputs[key]} min={min} max={max}
                               onChange={e => updateInput(key, +e.target.value)}
-                              className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-[#1F5C3A] bg-white" />
+                              className="w-full border border-slate-200 rounded-xl px-3.5 py-2.5 min-h-[44px] text-sm sm:text-base outline-none focus:border-[#1F5C3A] bg-white transition-all" />
                           </div>
                         ))}
                       </div>
@@ -619,7 +622,7 @@ export default function ExpertStudio() {
                       <div className="flex flex-col gap-2">
                         {['Standard Handling', 'Rough Transit', 'Heavy Stacking'].map(opt => (
                           <button key={opt} onClick={() => updateInput('punctureRating', opt)}
-                            className={`text-left px-3 py-2.5 rounded-xl border text-sm font-semibold transition-all ${
+                            className={`text-left px-3.5 py-2.5 min-h-[44px] rounded-xl border text-xs sm:text-sm font-semibold transition-all flex items-center ${
                               expertInputs.punctureRating === opt
                                 ? 'bg-[#1F5C3A]/10 border-[#1F5C3A] text-[#1F5C3A]'
                                 : 'bg-white border-slate-200 text-[#64748B] hover:border-slate-300'
@@ -638,7 +641,7 @@ export default function ExpertStudio() {
                     <div>
                       <label className="block text-xs font-bold text-[#64748B] uppercase tracking-wide mb-1.5">{t('expert.packagingEquipment', 'Packaging Equipment')}</label>
                       <select value={expertInputs.equipment} onChange={e => updateInput('equipment', e.target.value)}
-                        className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-[#1F5C3A] bg-white">
+                        className="w-full border border-slate-200 rounded-xl px-3.5 py-2.5 min-h-[44px] text-sm sm:text-base outline-none focus:border-[#1F5C3A] bg-white">
                         {['VFFS', 'HFFS / Flow Wrap', 'Tray Sealer + MAP', 'Vacuum Chamber Sealer', 'Thermoformer'].map(eq => (
                           <option key={eq}>{eq}</option>
                         ))}
@@ -654,7 +657,7 @@ export default function ExpertStudio() {
                             <div className="flex items-center">
                               <input type="number" value={expertInputs[key]} min={min} max={max}
                                 onChange={e => updateInput(key, +e.target.value)}
-                                className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-[#1F5C3A] bg-white" />
+                                className="w-full border border-slate-200 rounded-xl px-3.5 py-2.5 min-h-[44px] text-sm sm:text-base outline-none focus:border-[#1F5C3A] bg-white transition-all" />
                             </div>
                             <div className="text-[10px] text-[#64748B] mt-0.5">{unit.trim()}</div>
                           </div>
@@ -670,7 +673,7 @@ export default function ExpertStudio() {
                             <label className="block text-[10px] font-bold text-[#64748B] mb-1">{label}</label>
                             <input type="number" value={expertInputs[key]} min={min} max={max}
                               onChange={e => updateInput(key, +e.target.value)}
-                              className="w-full border border-slate-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-[#1F5C3A] bg-white" />
+                              className="w-full border border-slate-200 rounded-xl px-3.5 py-2.5 min-h-[44px] text-sm sm:text-base outline-none focus:border-[#1F5C3A] bg-white transition-all" />
                             <div className="text-[10px] text-[#64748B] mt-0.5">{unit}</div>
                           </div>
                         ))}
@@ -683,7 +686,7 @@ export default function ExpertStudio() {
               {/* Analyze button */}
               <div className="border-t border-slate-100 p-4">
                 <button onClick={handleAnalyze} disabled={loading}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-[#D9F04A] text-[#17452C] font-extrabold text-sm rounded-full py-3 hover:brightness-105 transition-all disabled:opacity-60">
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#D9F04A] text-[#17452C] font-extrabold text-xs sm:text-sm rounded-full py-3.5 min-h-[44px] hover:brightness-105 transition-all shadow-sm disabled:opacity-60">
                   {loading ? (
                     <><svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg> {t('expert.computing', 'Computing Barrier Matrix…')}</>
                   ) : (

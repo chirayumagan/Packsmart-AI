@@ -34,21 +34,21 @@ export default function FoodFormStep({ category, selected, onSelect }) {
 
   return (
     <div className="animate-slide-up">
-      <div className="mb-7">
-        <p className="section-eyebrow mb-1.5">Step 2 of 3</p>
-        <h2 className="text-2xl font-bold text-ink">{t('step2Title')}</h2>
-        <p className="text-muted text-sm mt-1">
+      <div className="mb-5 sm:mb-7">
+        <p className="section-eyebrow mb-1">Step 2 of 3</p>
+        <h2 className="text-xl sm:text-2xl font-bold text-ink">{t('step2Title')}</h2>
+        <p className="text-muted text-xs sm:text-sm mt-0.5 sm:mt-1">
           {t('step2Subtitle')}{' '}
           <span className="font-semibold text-forest">{t(CAT_LABEL[category] || '')}</span>
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         {forms.map(form => (
           <button
             key={form.id}
             onClick={() => onSelect(form.id)}
-            className={`step-option text-left ${selected === form.id ? 'selected' : ''}`}
+            className={`step-option text-left min-h-[44px] p-4 sm:p-5 ${selected === form.id ? 'selected' : ''}`}
           >
             {selected === form.id && (
               <div className="absolute top-3 right-3 w-5 h-5 bg-forest rounded-full flex items-center justify-center">
@@ -57,12 +57,12 @@ export default function FoodFormStep({ category, selected, onSelect }) {
                 </svg>
               </div>
             )}
-            <div className="flex items-start gap-4">
+            <div className="flex items-start gap-3 sm:gap-4">
               <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-forest/8 text-forest flex-shrink-0">
                 {form.icon}
               </div>
-              <div>
-                <h3 className="font-bold text-ink">{t(form.labelKey)}</h3>
+              <div className="min-w-0">
+                <h3 className="font-bold text-ink text-sm sm:text-base leading-snug">{t(form.labelKey)}</h3>
                 <p className="text-xs text-muted mt-0.5">{t(form.descKey)}</p>
               </div>
             </div>
@@ -72,3 +72,4 @@ export default function FoodFormStep({ category, selected, onSelect }) {
     </div>
   );
 }
+

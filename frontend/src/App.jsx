@@ -30,7 +30,7 @@ function AppContent() {
             <span>· SIH 2026 · Problem ID 26236</span>
           </div>
           <div className="flex items-center gap-4">
-            <span>Team Code Yodhas</span>
+            <span>Team Code YodhasX57</span>
             <span className="text-slate-300">|</span>
             <a href="https://www.fssai.gov.in" target="_blank" rel="noopener noreferrer" className="hover:text-[#1F5C3A] transition-colors">FSSAI Guidelines</a>
             <span className="text-slate-300">|</span>

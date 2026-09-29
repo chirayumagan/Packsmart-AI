@@ -37,18 +37,18 @@ export default function TransitRouteStep({ selected, onSelect }) {
 
   return (
     <div className="animate-slide-up">
-      <div className="mb-7">
-        <p className="section-eyebrow mb-1.5">Step 3 of 3</p>
-        <h2 className="text-2xl font-bold text-ink">{t('step3Title')}</h2>
-        <p className="text-muted text-sm mt-1">{t('step3Subtitle')}</p>
+      <div className="mb-5 sm:mb-7">
+        <p className="section-eyebrow mb-1">Step 3 of 3</p>
+        <h2 className="text-xl sm:text-2xl font-bold text-ink">{t('step3Title')}</h2>
+        <p className="text-muted text-xs sm:text-sm mt-0.5 sm:mt-1">{t('step3Subtitle')}</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
         {ROUTES.map(route => (
           <button
             key={route.id}
             onClick={() => onSelect(route.id)}
-            className={`step-option flex flex-col items-center text-center ${selected === route.id ? 'selected' : ''}`}
+            className={`step-option flex flex-col items-center text-center min-h-[44px] p-4 sm:p-5 ${selected === route.id ? 'selected' : ''}`}
           >
             {selected === route.id && (
               <div className="absolute top-3 right-3 w-5 h-5 bg-forest rounded-full flex items-center justify-center">
@@ -57,10 +57,10 @@ export default function TransitRouteStep({ selected, onSelect }) {
                 </svg>
               </div>
             )}
-            <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-3 ${route.accent}`}>
+            <div className={`w-12 sm:w-14 h-12 sm:h-14 rounded-2xl flex items-center justify-center mb-3 flex-shrink-0 ${route.accent}`}>
               {route.icon}
             </div>
-            <h3 className="font-bold text-ink">{t(route.labelKey)}</h3>
+            <h3 className="font-bold text-ink text-sm sm:text-base leading-snug">{t(route.labelKey)}</h3>
             <div className="flex items-center gap-2 mt-2">
               <span className="badge-green text-[10px]">{t(route.subtitleKey)}</span>
               <span className="text-[10px] text-muted font-medium">{t(route.timeKey)}</span>
@@ -72,3 +72,4 @@ export default function TransitRouteStep({ selected, onSelect }) {
     </div>
   );
 }
+

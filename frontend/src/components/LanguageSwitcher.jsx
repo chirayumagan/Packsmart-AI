@@ -22,7 +22,7 @@ export default function LanguageSwitcher({ variant = 'dark' }) {
   const isDark = variant === 'dark';
 
   return (
-    <div className={`flex items-center gap-1.5 px-3 py-2 rounded-full border transition-all duration-200 ${
+    <div className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full border transition-all duration-200 min-h-[44px] ${
       isDark
         ? 'bg-white/10 border-white/20 text-white hover:bg-white/15'
         : 'bg-white border-slate-200 text-ink hover:border-slate-300'
@@ -31,7 +31,7 @@ export default function LanguageSwitcher({ variant = 'dark' }) {
       <select
         value={current}
         onChange={e => i18n.changeLanguage(e.target.value)}
-        className={`bg-transparent text-xs font-semibold outline-none cursor-pointer [&>option]:text-ink [&>option]:bg-white ${
+        className={`bg-transparent text-xs font-semibold outline-none cursor-pointer min-h-[44px] py-1 [&>option]:text-ink [&>option]:bg-white ${
           isDark ? 'text-white' : 'text-ink'
         }`}
       >
@@ -42,3 +42,4 @@ export default function LanguageSwitcher({ variant = 'dark' }) {
     </div>
   );
 }
+

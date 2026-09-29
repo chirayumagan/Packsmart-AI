@@ -247,37 +247,45 @@ def recommend(request: RecommendationRequest, db: Session = Depends(get_db)):
                    "Please try a different transit route or food form.",
         )
 
-    # Step 4: ML scorer -> top 3
-    ranked = score_and_rank(filtered)
+    # Step 4: MOO ML scorer -> top 3
+    ranked = score_and_rank(filtered, food_profile, request.transit_route)
 
     def _slugify(name: str) -> str:
         name_l = name.lower()
         if "bopp" in name_l: return "bopp"
         if "pla" in name_l: return "pla"
         if "ldpe" in name_l: return "ldpe"
-        if "aluminium" in name_l: return "alu"
+        if "aluminium" in name_l or "alu" in name_l: return "alu"
         if "retort" in name_l: return "retort"
         if "map" in name_l or "modified atmosphere" in name_l: return "map"
-        if "kraft" in name_l: return "paper"
+        if "kraft" in name_l or "paper" in name_l: return "paper"
         if "hdpe" in name_l: return "hdpe"
         if "pp" in name_l: return "pp"
         return "pet"
 
-    # Step 5: Build response
-    recommendations = [
-        PackagingRecommendation(
-            id=_slugify(item["material"].name),
-            rank=item["rank"],
-            name=item["material"].name,
-            cost_per_unit_inr=float(item["material"].cost_per_unit_inr),
-            shelf_life_days=item["material"].shelf_life_days,
-            is_fssai_approved=item["material"].is_fssai_approved,
-            description=item["material"].description,
-            score=item["score"],
-            technical_specs=get_tech_specs(item["material"].name),
+    # Step 5: Build response with physics specs and Arrhenius shelf life
+    recommendations = []
+    for item in ranked:
+        mat = item["material"]
+        specs = get_tech_specs(mat.name)
+        # Enhance description with physics rationale if available
+        desc = mat.description
+        if item.get("physics_rationale"):
+            desc = f"{mat.description} Physics Note: {item['physics_rationale']}"
+
+        recommendations.append(
+            PackagingRecommendation(
+                id=_slugify(mat.name),
+                rank=item["rank"],
+                name=mat.name,
+                cost_per_unit_inr=float(mat.cost_per_unit_inr),
+                shelf_life_days=item.get("arrhenius_days", mat.shelf_life_days),
+                is_fssai_approved=mat.is_fssai_approved,
+                description=desc,
+                score=item["score"],
+                technical_specs=specs,
+            )
         )
-        for item in ranked
-    ]
 
     return RecommendationResponse(
         recommendations=recommendations,

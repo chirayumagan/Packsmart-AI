@@ -42,7 +42,7 @@ def apply_rules(
     Filter materials based on FSSAI compliance, barrier compatibility,
     and transit route suitability.
     """
-    passed = []
+    hard_passed = []
 
     for mat in materials:
         # Rule 1 — FSSAI hard gate
@@ -57,11 +57,15 @@ def apply_rules(
         if not _meets_barrier(mat.wvtr_class.value, food_profile.required_wvtr_class.value, food_profile.category, food_profile.form):
             continue
 
-        # Rule 4 — Transit route suitability (soft filter)
+        hard_passed.append(mat)
+
+    # Rule 4 — Transit route suitability (soft filter)
+    transit_passed = []
+    for mat in hard_passed:
         suitable = [t.strip() for t in mat.suitable_transit.split(",")]
-        if transit_route not in suitable:
-            continue
+        if transit_route in suitable:
+            transit_passed.append(mat)
 
-        passed.append(mat)
+    # Return transit-specific matches if available, otherwise fallback to hard-gate barrier-safe materials
+    return transit_passed if transit_passed else hard_passed
 
-    return passed

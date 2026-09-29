@@ -38,18 +38,18 @@ export default function FoodCategoryStep({ selected, onSelect }) {
 
   return (
     <div className="animate-slide-up">
-      <div className="mb-7">
-        <p className="section-eyebrow mb-1.5">Step 1 of 3</p>
-        <h2 className="text-2xl font-bold text-ink">{t('step1Title')}</h2>
-        <p className="text-muted text-sm mt-1">{t('step1Subtitle')}</p>
+      <div className="mb-5 sm:mb-7">
+        <p className="section-eyebrow mb-1">Step 1 of 3</p>
+        <h2 className="text-xl sm:text-2xl font-bold text-ink">{t('step1Title')}</h2>
+        <p className="text-muted text-xs sm:text-sm mt-0.5 sm:mt-1">{t('step1Subtitle')}</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         {CATEGORIES.map(cat => (
           <button
             key={cat.id}
             onClick={() => onSelect(cat.id)}
-            className={`step-option text-left ${selected === cat.id ? 'selected' : ''}`}
+            className={`step-option text-left min-h-[44px] p-4 sm:p-5 ${selected === cat.id ? 'selected' : ''}`}
           >
             {/* Selection ring */}
             {selected === cat.id && (
@@ -59,12 +59,12 @@ export default function FoodCategoryStep({ selected, onSelect }) {
                 </svg>
               </div>
             )}
-            <div className="flex items-start gap-4">
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${cat.accent}`}>
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className={`w-10 sm:w-12 h-10 sm:h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${cat.accent}`}>
                 {cat.icon}
               </div>
-              <div>
-                <h3 className="font-bold text-ink text-base">{t(cat.labelKey)}</h3>
+              <div className="min-w-0">
+                <h3 className="font-bold text-ink text-sm sm:text-base leading-snug">{t(cat.labelKey)}</h3>
                 <p className="text-xs text-muted mt-0.5">{t(cat.examplesKey)}</p>
               </div>
             </div>
@@ -74,3 +74,4 @@ export default function FoodCategoryStep({ selected, onSelect }) {
     </div>
   );
 }
+

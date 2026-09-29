@@ -138,3 +138,29 @@
 .accordion-inner {
   overflow: hidden;
 }
+
+/* ── Aurora glow & Marquee keyframes ───────────────────────────── */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes aurora-pulse {
+  0%, 100% { opacity: 0.35; transform: scale(1) translate(-50%, 0); }
+  50% { opacity: 0.65; transform: scale(1.08) translate(-50%, -10px); }
+}
+
+.animate-aurora {
+  animation: aurora-pulse 9s ease-in-out infinite;
+}
+
