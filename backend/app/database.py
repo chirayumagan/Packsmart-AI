@@ -1,27 +1,43 @@
 """
 database.py — SQLAlchemy engine + session factory.
+
+Now connected to Supabase (PostgreSQL) via a transaction-mode pooler URL.
 Reads credentials from .env via python-dotenv.
 """
 import os
-from urllib.parse import quote_plus
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
 load_dotenv()
 
-DB_USER = os.getenv("DB_USER", "root")
-DB_PASSWORD = os.getenv("DB_PASSWORD", "")
-DB_HOST = os.getenv("DB_HOST", "localhost")
-DB_PORT = os.getenv("DB_PORT", "3306")
-DB_NAME = os.getenv("DB_NAME", "packsmart_db")
+# ---------------------------------------------------------------------------
+# Supabase PostgreSQL connection (Transaction-mode pooler — port 6543)
+# Falls back to direct DB URL if DATABASE_URL is set.
+# ---------------------------------------------------------------------------
+DATABASE_URL = os.getenv("DATABASE_URL")
 
-# URL-encode password to safely handle special characters (@, #, !, etc.)
-DATABASE_URL = (
-    f"mysql+pymysql://{quote_plus(DB_USER)}:{quote_plus(DB_PASSWORD)}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+if not DATABASE_URL:
+    # Build from individual Supabase env vars
+    DB_USER     = os.getenv("DB_USER", "postgres")
+    DB_PASSWORD = os.getenv("DB_PASSWORD", "")
+    DB_HOST     = os.getenv("DB_HOST", "")
+    DB_PORT     = os.getenv("DB_PORT", "5432")
+    DB_NAME     = os.getenv("DB_NAME", "postgres")
+
+    from urllib.parse import quote_plus
+    DATABASE_URL = (
+        f"postgresql+psycopg2://{quote_plus(DB_USER)}:{quote_plus(DB_PASSWORD)}"
+        f"@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+    )
+
+# pool_pre_ping keeps idle connections alive across Supabase's connection recycler.
+engine = create_engine(
+    DATABASE_URL,
+    echo=False,
+    pool_pre_ping=True,
+    connect_args={"sslmode": "require"},  # Supabase requires TLS
 )
-
-engine = create_engine(DATABASE_URL, echo=False)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 

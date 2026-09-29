@@ -94,8 +94,10 @@ def get_tech_specs(material_name: str) -> dict:
 # ---------------------------------------------------------------------------
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup: ensure tables exist (seed.py already seeded them — this is a safety net)
-    Base.metadata.create_all(bind=engine)
+    # Startup: verify Supabase connectivity (schema is managed via migrations — do NOT call create_all)
+    from sqlalchemy import text
+    with engine.connect() as conn:
+        conn.execute(text("SELECT 1"))
     yield
     # Shutdown: nothing to clean up
 

@@ -1,9 +1,8 @@
 fastapi
 uvicorn[standard]
 sqlalchemy
-pymysql
+psycopg2-binary
 python-dotenv
 scikit-learn
 numpy
 pydantic
-cryptography
