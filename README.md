@@ -210,6 +210,26 @@ Access the frontend app at `http://localhost:5173`. Backend API runs at `http://
 
 ---
 
+## 🚀 Vercel Deployment Guide
+
+PackSmart AI is pre-configured for seamless unified monorepo deployment on **Vercel** (hosting both React Frontend and FastAPI Python Serverless Functions under one domain).
+
+### 1-Click Deployment Steps
+
+1. **Push Code to GitHub**: Ensure all latest commits are pushed to your GitHub repository (`chirayumagan/Packsmart-AI`).
+2. **Import Project into Vercel**:
+   - Go to [Vercel Dashboard](https://vercel.com/new) $\rightarrow$ **Add New Project**.
+   - Select your `Packsmart-AI` GitHub repository.
+3. **Configure Environment Variables**:
+   - Add `DATABASE_URL` in the Vercel Project Settings:
+     ```env
+     DATABASE_URL=postgresql+psycopg2://postgres.swhrtvbmpbvgzfoambrp:Z4nFepAA%2B%3Fz%2F-fn@aws-0-ap-south-1.pooler.supabase.com:6543/postgres
+     ```
+4. **Deploy**:
+   - Click **Deploy**. Vercel will automatically detect `vercel.json`, build the Vite React frontend, and deploy the FastAPI backend as Python Serverless Functions at `/api/*`.
+
+---
+
 ## 🧪 Verification & Testing Suite
 
 The repository includes a comprehensive automated test suite verifying database connectivity, physics formulas, API endpoint latencies, and production build readiness.
