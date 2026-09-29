@@ -94,18 +94,18 @@ Full, native localization and phonetic keyword mapping across 10 major Indian la
 
 ```mermaid
 graph TD
-    User([User: Farmer / FPO / FoodTech R&D]) -->|HTTPS| ReactApp[React 18 + Vite Frontend]
-    ReactApp -->|i18next| i18n[10-Language Native Localization]
-    ReactApp -->|REST API Requests| FastAPI[FastAPI Backend Server]
+    User["User: Farmer / FPO / FoodTech R&D"] -->|HTTPS| ReactApp["React 18 + Vite Frontend"]
+    ReactApp -->|i18next| i18n["10-Language Native Localization"]
+    ReactApp -->|REST API Requests| FastAPI["FastAPI Backend Server"]
     
-    subgraph Backend Core Engine
-        FastAPI -->|Multilingual Search| FoodSearch[food_search / searcher.py]
-        FastAPI -->|Hard-Gate Safety Filter| RuleFilter[engine / rule_filter.py]
-        FastAPI -->|Arrhenius & Barrier Physics| PhysicsEngine[engine / physics_engine.py]
-        FastAPI -->|Pareto MOO Utility Scorer| MLScorer[engine / ml_scorer.py]
+    subgraph CoreEngine ["Backend Core Engine"]
+        FastAPI -->|Multilingual Search| FoodSearch["food_search / searcher.py"]
+        FastAPI -->|Hard-Gate Safety Filter| RuleFilter["engine / rule_filter.py"]
+        FastAPI -->|Arrhenius & Barrier Physics| PhysicsEngine["engine / physics_engine.py"]
+        FastAPI -->|Pareto MOO Utility Scorer| MLScorer["engine / ml_scorer.py"]
     end
     
-    Backend Core Engine -->|SQLAlchemy / psycopg2| Supabase[(Supabase PostgreSQL Database)]
+    CoreEngine -->|SQLAlchemy / psycopg2| Supabase[("Supabase PostgreSQL Database")]
 ```
 
 * **Frontend**: React 18, Vite, Tailwind CSS, Lucide Icons, `react-i18next`.
